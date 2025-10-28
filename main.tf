@@ -39,10 +39,11 @@ data "aws_iam_policy_document" "gha_ecr_public_role_policy" {
       "ecr-public:InitiateLayerUpload",
       "ecr-public:PutImage",
       "ecr-public:UploadLayerPart",
-      "ecr-public:Describe*"
+      "ecr-public:Describe*",
+      "ecr-public:GetAuthorizationToken"
     ]
 
-    resources = [aws_ecrpublic_repository.gogogadget.arn]
+    resources = ["*"]
     effect    = "Allow"
   }
 }
