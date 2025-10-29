@@ -9,25 +9,11 @@ terraform {
 
 provider "aws" {
   profile = "mara"
-  region = "us-east-2"
+  region  = "us-east-1"
   default_tags {
     tags = {
-      Environment = "mara-lab"
-      Name        = ""
+      Environment  = "mara-lab"
+      github_repos = "http://github.com/filthystinkingcasual/gggr-terraform"
     }
+  }
 }
-
-data "aws_caller_identity" "current" {}
-
-output "account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
-
-output "caller_arn" {
-  value = data.aws_caller_identity.current.arn
-}
-
-output "caller_user" {
-  value = data.aws_caller_identity.current.user_id
-}
-
