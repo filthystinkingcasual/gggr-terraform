@@ -40,7 +40,8 @@ data "aws_iam_policy_document" "gha_ecr_public_role_policy" {
       "ecr-public:PutImage",
       "ecr-public:UploadLayerPart",
       "ecr-public:Describe*",
-      "ecr-public:GetAuthorizationToken"
+      "ecr-public:GetAuthorizationToken",
+      "sts:GetServiceBearerToken"
     ]
 
     resources = ["*"]
